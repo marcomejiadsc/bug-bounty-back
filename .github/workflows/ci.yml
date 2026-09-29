@@ -34,8 +34,8 @@ jobs:
 
       - name: Run Tests
         env:
-          DJANGO_SETTINGS_MODULE: config.settings.test
-          DATABASE_URL: sqlite:///:memory:
+          DJANGO_SETTINGS_MODULE: "config.settings.test"
+          DATABASE_URL: "sqlite:///:memory:"
           SECRET_KEY: "ci-secret-key-for-testing-purposes-only"
           USE_DOCKER: "no"
         run: |
