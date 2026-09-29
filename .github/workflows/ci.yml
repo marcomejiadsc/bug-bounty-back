@@ -23,7 +23,14 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements/local.txt
+          if [ -f requirements/local.txt ]; then
+            pip install -r requirements/local.txt
+          elif [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            pip install django pytest pytest-django flake8
+          fi
+          pip install flake8 pytest pytest-django
 
       - name: Lint with Flake8
         run: |
