@@ -20,11 +20,8 @@ jobs:
         with:
           enable-cache: true
 
-      - name: Set up Python
-        run: uv python install 3.12
-
       - name: Install Dependencies
-        run: uv sync --all-extras --dev --python 3.12
+        run: uv sync --all-extras --dev
 
       - name: Lint with Flake8
         run: |
